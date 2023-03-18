@@ -66,4 +66,9 @@
     <string name="discover">历史上的今天</string>
     <string name="report">您的今日报告</string>
     <string name="saying">每天一句</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">订单</string>
+    <string name="title_notifications">我的</string>
 </resources>

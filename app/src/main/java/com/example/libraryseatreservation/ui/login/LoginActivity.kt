@@ -8,8 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.haa_roh.db.INPUTRIGHT
 import com.example.haa_roh.db.NOTFWTHEAUTOCODE
-import com.example.libraryseatreservation.db.querySpIsLogin
 import com.example.libraryseatreservation.MainActivity
+import com.example.libraryseatreservation.db.querySpIsLogin
 import com.example.libraryseatreservation.R
 import com.example.libraryseatreservation.base.BaseActivity
 import com.example.libraryseatreservation.databinding.ActivityLoginBinding
@@ -41,7 +41,7 @@ class LoginActivity : BaseActivity() {
    */
     private fun isStartLogin() {
         if( querySpIsLogin() ){
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
             finish()
