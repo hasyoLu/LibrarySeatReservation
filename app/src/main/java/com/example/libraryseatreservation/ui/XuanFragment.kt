@@ -48,7 +48,7 @@ class XuanFragment : Fragment() {
         }
 
         val items: MutableList<AbstractItem> = ArrayList<AbstractItem>()
-        for (i in 0..29) {
+        for (i in 0..100) {
             if (i % COLUMNS == 0 || i % COLUMNS == 4) {
                 items.add(EdgeItem(i.toString()))
             } else if (i % COLUMNS == 1 || i % COLUMNS == 3) {

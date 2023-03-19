@@ -50,7 +50,6 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
             imgSeat = (ImageView) itemView.findViewById(R.id.img_seat);
             imgSeatSelected = (ImageView) itemView.findViewById(R.id.img_seat_selected);
 
-
         }
 
     }
@@ -127,8 +126,6 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
                         mOnSeatSelected.onSeatSelected(getSelectedItemCount());
                         i++;
                     }
-
-
                 }
             });
 
@@ -137,9 +134,6 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
         } else if (type == AbstractItem.TYPE_EDGE) {
             final EdgeItem item = (EdgeItem) mItems.get(position);
             EdgeViewHolder holder = (EdgeViewHolder) viewHolder;
-
-
-
             holder.imgSeat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -153,9 +147,6 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
                         mOnSeatSelected.onSeatSelected(getSelectedItemCount());
                         i++;
                     }
-
-
-
                 }
             });
 
