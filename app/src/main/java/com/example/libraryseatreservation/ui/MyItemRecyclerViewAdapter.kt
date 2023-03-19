@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.libraryseatreservation.bean.ItemBean
 import com.example.libraryseatreservation.databinding.FragmentItemBinding
 
@@ -34,7 +35,15 @@ class MyItemRecyclerViewAdapter(
         binding.number.text = item.number
         binding.time.text = item.time
         binding.longer.text = item.long
+        binding.button2.setOnClickListener {
+            listener.invoke()
+        }
     }
+    fun setClickListener(listener: () -> Unit) {
+        this.listener = listener
+    }
+
+    private lateinit var listener: () -> Unit
 
     override fun getItemCount(): Int = values.size
 

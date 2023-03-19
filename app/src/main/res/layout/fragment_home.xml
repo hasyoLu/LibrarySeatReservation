@@ -4,19 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
-
+    android:background="#11989696"
+    tools:context=".ui.home.HomeFragment"
+    >
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/weizhi2"
+        android:id="@+id/icon_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/weizhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        app:layout_constraintTop_toTopOf="@id/icon_text"
+        app:layout_constraintBottom_toBottomOf="@id/icon_text"
+        app:layout_constraintLeft_toRightOf="@id/icon_text"
+        android:text="西安邮电大学长按校区"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/push1"
+        app:layout_constraintTop_toTopOf="@id/weizhi"
+        app:layout_constraintBottom_toBottomOf="@id/weizhi"
+        app:layout_constraintLeft_toRightOf="@id/weizhi"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_saying"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/weizhi"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/iocn_ty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/saying"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Never put off what you can do today until tomorrow."
+                android:id="@+id/saying_English"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iocn_ty"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:text="相信你自己!"
+                android:id="@+id/saying_Chinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/saying_English"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_saying"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="校区图书馆"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_margin="6dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/item_tu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

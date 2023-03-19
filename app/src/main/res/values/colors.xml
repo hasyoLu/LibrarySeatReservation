@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="authCode">#3689AF</color>
     <color name="authCodeAfter">#CEC5BBBB</color>
+    <color name="maincolor">#8f000b</color>
+    <color name="text">#000000</color>
 </resources>

@@ -11,7 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    <string name="title_plan">计划</string>
+    <string name="title_plan">选座位</string>
     <string name="title_diary">日常</string>
     <string name="title_share">共享空间</string>
     <!-- Strings related to login -->
@@ -47,7 +47,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="head_defult">学习使我快乐学习使我快</string>
+    <string name="head_defult">学习使我快乐学习</string>
     <string name="head_usernameDefault">Tony Red</string>
     <string name="title_advice">建议与反馈</string>
     <string name="title_about">关于我们</string>

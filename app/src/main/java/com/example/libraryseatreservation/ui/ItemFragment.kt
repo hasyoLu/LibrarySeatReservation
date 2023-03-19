@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.libraryseatreservation.R
 import com.example.libraryseatreservation.bean.ItemBean
 import com.example.libraryseatreservation.ui.placeholder.PlaceholderContent
@@ -37,9 +38,17 @@ class ItemFragment : Fragment() {
             with(view) {
                 layoutManager = LinearLayoutManager(context)
                 adapter = if (status == STATUS_FINISH) {
-                    MyItemRecyclerViewAdapter(getFinishDate())
+                    MyItemRecyclerViewAdapter(getFinishDate()).apply {
+                        setClickListener {
+                            Toast.makeText(context, "请不要在网络上逼逼赖赖，有问题自己解决", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 } else {
-                    MyItemRecyclerViewAdapter(getUnFinishDate())
+                    MyItemRecyclerViewAdapter(getUnFinishDate()).apply {
+                        setClickListener {
+                            Toast.makeText(context, "请不要在网络上逼逼赖赖，有问题自己解决", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
             }
         }

@@ -1,9 +1,11 @@
 package com.example.libraryseatreservation.ui.login
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.haa_roh.db.INPUTRIGHT
@@ -13,6 +15,8 @@ import com.example.libraryseatreservation.db.querySpIsLogin
 import com.example.libraryseatreservation.R
 import com.example.libraryseatreservation.base.BaseActivity
 import com.example.libraryseatreservation.databinding.ActivityLoginBinding
+import com.example.libraryseatreservation.db.saveToSp
+import com.example.libraryseatreservation.ui.ItemFragment
 import com.example.libraryseatreservation.util.afterTextChanged
 
 /**
@@ -32,7 +36,9 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        isStartLogin()
+        if(status == 0) {
+            isStartLogin()
+        }
         initView()
         initData()
     }
@@ -145,6 +151,18 @@ class LoginActivity : BaseActivity() {
                 showErrorToast(this,getString(R.string.sendAutoCodeError))
             }
         })
+    }
+
+    companion object {
+        private var status = 0
+        fun newInstance(activity: Activity, status: Int) {
+            this.status = status
+            val intent = Intent(activity, LoginActivity::class.java)
+            activity.startActivity(intent)
+            saveToSp("", false)
+            activity.finish()
+        }
+
     }
 
 }
